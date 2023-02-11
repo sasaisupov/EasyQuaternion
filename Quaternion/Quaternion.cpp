@@ -3,8 +3,6 @@
 
 #define SQR(x) ((x)*(x))
 
-using namespace std;
-
 Quaternion::Quaternion(double w, double x, double y, double z)
         : m_w(w), m_x(x), m_y(y), m_z(z)
 {}
@@ -12,9 +10,9 @@ Quaternion::Quaternion(double w, double x, double y, double z)
 Quaternion::Quaternion(double x, double y, double z, std::string order)
 {
     std::unordered_map<char, Quaternion> m = {
-            {'x', Quaternion{cos(x/2.0), sin(x/2.0), 0,          0}},
-            {'y', Quaternion{cos(y/2.0), 0,          sin(y/2.0), 0}},
-            {'z', Quaternion{cos(z/2.0), 0,          0,          sin(z/2.0) }}
+            {'x', Quaternion{std::cos(x/2.0), sin(std::x/2.0), 0,          0}},
+            {'y', Quaternion{std::cos(y/2.0), 0,          std::sin(y/2.0), 0}},
+            {'z', Quaternion{std::cos(z/2.0), 0,          0,          std::sin(z/2.0) }}
     };
 
     Quaternion q{ 1,0,0,0 };
@@ -26,12 +24,12 @@ Quaternion::Quaternion(double x, double y, double z, std::string order)
 Quaternion ToQuaternion(double yaw, double pitch, double roll) // yaw (Z), pitch (Y), roll (X)
 {
     // Abbreviations for the various angular functions
-    double cy = cos(yaw * 0.5);
-    double sy = sin(yaw * 0.5);
-    double cp = cos(pitch * 0.5);
-    double sp = sin(pitch * 0.5);
-    double cr = cos(roll * 0.5);
-    double sr = sin(roll * 0.5);
+    double cy = std::cos(yaw * 0.5);
+    double sy = std::sin(yaw * 0.5);
+    double cp = std::cos(pitch * 0.5);
+    double sp = std::sin(pitch * 0.5);
+    double cr = std::cos(roll * 0.5);
+    double sr = std::sin(roll * 0.5);
 
     return Quaternion{
             cr * cp * cy + sr * sp * sy,
@@ -53,7 +51,7 @@ Quaternion& Quaternion::Scale(double val)
 
 double Quaternion::Length()const
 {
-    return sqrt(SQR(m_w) + SQR(m_x) + SQR(m_y) + SQR(m_z));
+    return std::sqrt(SQR(m_w) + SQR(m_x) + SQR(m_y) + SQR(m_z));
 }
 
 Quaternion& Quaternion::Normalize()
