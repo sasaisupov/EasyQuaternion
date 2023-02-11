@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#icnlude <cmath>
+#include <cmath>
 
 constexpr double Accuracy = 1e-5;
 
