@@ -3,6 +3,8 @@
 
 #define SQR(x) ((x)*(x))
 
+using namespace std;
+
 Quaternion::Quaternion(double w, double x, double y, double z)
         : m_w(w), m_x(x), m_y(y), m_z(z)
 {}
