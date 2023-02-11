@@ -3,7 +3,7 @@
 #include <Quaternion.h>
 #include <QuaternionSlerp.h>
 
-constexpr double M_PIl = 3.14159265358979323846264338327950288;
+constexpr double PI = 3.14159265358979323846264338327950288;
 template<typename T1, typename T2>
 constexpr bool EQ(T1 t1, T2 t2, double accuracy = Accuracy) noexcept
 {
@@ -84,8 +84,8 @@ TEST(Quaternion, Multiplication)
 TEST(QuaternionSLERP, Common)
 {
     //Arrange
-    Quaternion q1{ M_PIl / 6, M_PIl / 6 ,M_PIl / 6 ,"zyx" };
-    Quaternion q2{ M_PIl / 3, M_PIl / 3 ,M_PIl / 3 ,"zyx" };
+    Quaternion q1{ PI / 6, PI / 6 ,PI / 6 ,"zyx" };
+    Quaternion q2{ PI / 3, PI / 3 ,PI / 3 ,"zyx" };
 
     Quaternion matlab(0.857633733711829, 0.169832226922793, 0.454728939255462, 0.169832226922793);
     matlab.Normalize();
