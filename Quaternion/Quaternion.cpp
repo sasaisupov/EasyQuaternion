@@ -10,7 +10,7 @@ Quaternion::Quaternion(double w, double x, double y, double z)
 Quaternion::Quaternion(double x, double y, double z, std::string order)
 {
     std::unordered_map<char, Quaternion> m = {
-            {'x', Quaternion{std::cos(x/2.0), sin(std::x/2.0), 0,          0}},
+            {'x', Quaternion{std::cos(x/2.0), std::sin(x/2.0), 0,          0}},
             {'y', Quaternion{std::cos(y/2.0), 0,          std::sin(y/2.0), 0}},
             {'z', Quaternion{std::cos(z/2.0), 0,          0,          std::sin(z/2.0) }}
     };
